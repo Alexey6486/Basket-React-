@@ -1,24 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import s from './App.module.css'
+import {AddForm} from "./addForm/AddForm";
+import { BasketTable } from './basketTable/BasketTable';
+import {Total} from "./total/Total";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={s.app}>
+        <div className="container">
+            <div className={s.basket}>
+                <div className={s.basketLeft}>
+                    <BasketTable />
+                    <AddForm />
+                </div>
+                <div className={s.basketRight}>
+                    <Total/>
+                </div>
+            </div>
+        </div>
     </div>
   );
 }
